@@ -1,4 +1,5 @@
-
+#include <stdio.h>
+    
 int przestepny(int r)
 {
     return (r % 4 == 0 && r % 100 != 0) || (r % 400 == 0);

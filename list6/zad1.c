@@ -1,4 +1,5 @@
-
+#include <stdio.h>
+    
 
 double ocena(int pkt, int max)
 {

@@ -1,3 +1,4 @@
+#include <stdio.h>  
 
 int pitagoras(int a, int b, int c)
 {

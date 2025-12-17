@@ -1,4 +1,5 @@
-
+#include <stdio.h>
+    
 int pierwsza(int n)
 {
     int i;

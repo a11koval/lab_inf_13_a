@@ -1,3 +1,4 @@
+#include <stdio.h>
 
 void zamien(int *a, int *b)
 {

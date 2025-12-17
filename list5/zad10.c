@@ -1,4 +1,5 @@
-
+#include <stdio.h>
+#include <math.h>
 
 void kwadratowe(double a, double b, double c)
 {

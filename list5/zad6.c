@@ -1,3 +1,4 @@
+#include <stdio.h>
 
 
 double bmi(double masa, double wzrost)

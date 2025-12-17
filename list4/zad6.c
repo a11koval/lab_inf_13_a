@@ -1,4 +1,4 @@
-
+#include <stdio.h>
 int main(void)
 {
     int N, i, suma = 0;

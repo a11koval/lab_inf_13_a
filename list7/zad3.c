@@ -1,3 +1,4 @@
+#include <stdio.h>  
 
 
 int max_tab(int t[], int n)

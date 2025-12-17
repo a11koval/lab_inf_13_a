@@ -1,4 +1,4 @@
-
+#include <stdio.h>
 
 int main(void) {
     float ocena, suma = 0;

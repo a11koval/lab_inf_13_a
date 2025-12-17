@@ -1,4 +1,4 @@
-
+#include <stdio.h>
 
 int main(void) {
     int zdobyte_punkty, maks_punkty;

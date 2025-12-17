@@ -1,3 +1,4 @@
+#include <stdio.h>
 
 
 int suma_kwadratow(int K)

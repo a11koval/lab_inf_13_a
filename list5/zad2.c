@@ -1,3 +1,4 @@
+#include <stdio.h>
 
 
 double srednia(double a, double b, double c)

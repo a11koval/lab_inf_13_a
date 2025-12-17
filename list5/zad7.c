@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <math.h>
 
 
 void prostokat(double a, double b, double *d, double *p, double *o)

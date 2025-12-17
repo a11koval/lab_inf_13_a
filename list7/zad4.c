@@ -1,4 +1,5 @@
-
+#include <stdio.h>
+    
 
 int min_index(int t[], int n)
 {
