@@ -1,8 +1,9 @@
 #include <stdio.h>
 
 int main(void) {
-    float x;
-    scanf("%f", &x);
-    printf("%.2f\n", x);
+    printf("Jan Kowalski\n");
+    printf("ul. Nowa 5\n");
+    printf("00-950 Warszawa");
+
     return 0;
 }

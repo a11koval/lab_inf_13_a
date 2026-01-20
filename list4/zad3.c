@@ -1,18 +1,13 @@
+
 #include <stdio.h>
+int main(void) {
+    int i, j;
 
-int main(void)
-{
-    int x, min, max;
-    scanf("%d", &x);
-
-    min = max = x;
-
-    while (x != 0) {
-        if (x < min) min = x;
-        if (x > max) max = x;
-        scanf("%d", &x);
+    for (i = 1; i <= 10; i++) {
+        for (j = 1; j <= 10; j++) {
+            printf("%4d", i * j);
+        }
+        printf("\n");
     }
-
-    printf("min = %d\nmax = %d\n", min, max);
     return 0;
 }

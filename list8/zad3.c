@@ -1,41 +1,18 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-void pierwsze(int tab[], int N)
+#include <stdio.h>  
+
+
+int max_tab(int t[], int n)
 {
-    int i, j, k=0, suma=0;
-    for(i=0; i<N; i++)
-    {
-        for(j=2; j<tab[i]; j++)
-        {
-            if(tab[i]%j==0)
-                k=1;
-        }
-        if(k==0)
-            suma=suma+tab[i];
-        k=0;
-    }
-    printf("Suma liczb pierwszych: %d.\n", suma);
+    int i, max = t[0];
+    for (i = 1; i < n; i++)
+        if (t[i] > max)
+            max = t[i];
+    return max;
 }
 
-void tablica(int tab[], int N)
+int main(void)
 {
-    int i;
-    printf("\nTablica:\n\n");
-    for(i=0; i<N; i++)
-    {
-        tab[i]=rand()%100+1;
-        printf("%5.d", tab[i]);
-    }
-    printf("\n\n");
-}
-
-int main()
-{
-    #define N 72
-    int tab[N];
-    srand((unsigned int)time(NULL));
-    tablica(tab, N);
-    pierwsze(tab, N);
+    int t[5] = {3, 8, 1, 6, 4};
+    printf("%d\n", max_tab(t, 5));
     return 0;
 }

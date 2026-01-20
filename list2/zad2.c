@@ -1,14 +1,11 @@
 #include <stdio.h>
 
-int main(void) {
-    float c;
-    scanf("%f", &c);
+int main() {
+    char s ='S';
+int a=10;
+float x=4.5;
 
-    float f = (c * 9/5) + 32;
-    float k = c + 273.15;
-
-    printf("Fahrenheit: %.2f\n", f);
-    printf("Kelvin: %.2f\n", k);
+printf("%c\n %d\n %.2f", s, a, x);
 
     return 0;
 }

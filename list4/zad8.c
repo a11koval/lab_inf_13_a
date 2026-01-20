@@ -1,12 +1,11 @@
 #include <stdio.h>
 
-int main(void)
-{
-    int N, i;
-    scanf("%d", &N);
+int main(void) {
+    int a, b, i;
+    scanf("%d %d", &a, &b);
 
-    for (i = 1; i <= N; i++)
-        if (N % i == 0)
+    for (i = b; i >= a; i--)
+        if (i % 2 == 0)
             printf("%d ", i);
 
     return 0;

@@ -1,37 +1,25 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-void trojka(int tab[], int N)
-{
-    int i, m, suma=0;
-    printf("\nPodaj liczbe calkowita: ");
-    scanf("%d", &m);
-    printf("\nTrojki w tablicy:\n\n");
-    for(i=0; i<N-3; i++)
-    {
-        if(tab[i]==m-2 && tab[i+1]==m && tab[i+2]==m+2)
-            printf("%d[%d] %d[%d] %d[%d]\n", tab[i], i, tab[i+1], i+1, tab[i+2], i+2);
-    }
-}
 
-void tablica(int tab[], int N)
+int main(void)
 {
-    int i;
-    printf("\nTablica:\n\n");
-    for(i=0; i<N; i++)
-    {
-        tab[i]=rand()%5+1;
-        printf("%5.d", tab[i]);
-    }
-    printf("\n\n");
-}
+    int t[50], i;
+    int suma = 0, parz = 0, ile20 = 0;
 
-int main()
-{
-    #define N 72
-    int tab[N];
     srand((unsigned int)time(NULL));
-    tablica(tab, N);
-    trojka(tab, N);
+
+    for (i = 0; i < 50; i++) {
+        t[i] = rand() % 36;
+        suma += t[i];
+        if (t[i] > 20) ile20++;
+        if (t[i] % 2 == 0) parz += t[i];
+    }
+
+    printf("ile >20: %d\n", ile20);
+    printf("suma: %d\n", suma);
+    printf("srednia: %lf\n", suma / 50.0);
+    printf("srednia parzystych: %lf\n", parz / 25.0);
+
     return 0;
 }

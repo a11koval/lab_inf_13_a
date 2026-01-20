@@ -1,17 +1,24 @@
 #include <stdio.h>
-    
-int pierwsza(int n)
-{
-    int i;
-    if (n < 2) return 0;
-    for (i = 2; i * i <= n; i++)
-        if (n % i == 0)
-            return 0;
-    return 1;
-}
 
 int main(void)
 {
-    printf("%d\n", pierwsza(7));
+    double a, b;
+    char op;
+
+    scanf("%lf %c %lf", &a, &op, &b);
+
+    switch (op) {
+        case '+': printf("%lf\n", a + b); break;
+        case '-': printf("%lf\n", a - b); break;
+        case '*': printf("%lf\n", a * b); break;
+        case '/':
+            if (b != 0)
+                printf("%lf\n", a / b);
+            else
+                printf("Dzielenie przez zero\n");
+            break;
+        default:
+            printf("Bledny operator\n");
+    }
     return 0;
 }

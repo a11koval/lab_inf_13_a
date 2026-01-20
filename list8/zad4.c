@@ -1,37 +1,18 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
-void rowne(int tab[], int N)
+    
+
+int min_index(int t[], int n)
 {
-    int i, j, suma=0;
-    printf("\nElementy tablicy o wartosci rownej indeksowi: ");
-    for(i=0; i<N; i++)
-    {
-        j=tab[i];
-        if(j==i)
-            printf("%5.d", j);
-    }
-    printf("\n");
+    int i, min = 0;
+    for (i = 1; i < n; i++)
+        if (t[i] < t[min])
+            min = i;
+    return min;
 }
 
-void tablica(int tab[], int N)
+int main(void)
 {
-    int i;
-    printf("\nTablica:\n\n");
-    for(i=0; i<N; i++)
-    {
-        tab[i]=rand()%72+1;
-        printf("%5.d", tab[i]);
-    }
-    printf("\n\n");
-}
-
-int main()
-{
-    #define N 72
-    int tab[N];
-    srand((unsigned int)time(NULL));
-    tablica(tab, N);
-    rowne(tab, N);
+    int t[5] = {7, 2, 9, 1, 4};
+    printf("%d\n", min_index(t, 5));
     return 0;
 }

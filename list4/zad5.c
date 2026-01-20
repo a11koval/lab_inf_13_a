@@ -1,21 +1,21 @@
 #include <stdio.h>
-#include <stdlib.h>
-int main(void)
-{
-    int x, g, kroki = 0;
 
-    srand((unsigned int)time(NULL));
-    x = rand() % 10;
+int main(void) {
+    float ocena, suma = 0;
+    int licznik = 0;
 
-    do {
-        scanf("%d", &g);
-        kroki++;
+    while (1) {
+        scanf("%f", &ocena);
+        if (ocena == 0)
+            break;
+        suma += ocena;
+        licznik++;
+    }
 
-        if (g < x) printf("za malo\n");
-        else if (g > x) printf("za duzo\n");
+    if (licznik > 0)
+        printf("Srednia = %.2f\n", suma / licznik);
+    else
+        printf("Brak ocen\n");
 
-    } while (g != x);
-
-    printf("Odgadniete w %d krokach\n", kroki);
     return 0;
 }

@@ -1,24 +1,21 @@
 #include <stdio.h>
-    
-
-int pierwsza(int n)
-{
-    int i;
-    if (n < 2) return 0;
-    for (i = 2; i * i <= n; i++)
-        if (n % i == 0)
-            return 0;
-    return 1;
-}
-
+#include <stdlib.h>
 int main(void)
 {
-    int N, i;
-    scanf("%d", &N);
+    int x, g, kroki = 0;
 
-    for (i = 1; i <= N; i++)
-        if (pierwsza(i))
-            printf("%d ", i);
+    srand((unsigned int)time(NULL));
+    x = rand() % 10;
 
+    do {
+        scanf("%d", &g);
+        kroki++;
+
+        if (g < x) printf("za malo\n");
+        else if (g > x) printf("za duzo\n");
+
+    } while (g != x);
+
+    printf("Odgadniete w %d krokach\n", kroki);
     return 0;
 }

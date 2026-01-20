@@ -1,46 +1,48 @@
 #include <stdio.h>
-
-#define N 100
-#define M 100
-
-void wczytaj(int tab[N][M], int n, int m) {
-    for(int i = 0; i < n; i++)
-        for(int j = 0; j < m; j++)
-            scanf("%d", &tab[i][j]);
-}
-
-void wypisz(int tab[N][M], int n, int m) {
-    for(int i = 0; i < n; i++) {
-        for(int j = 0; j < m; j++)
-            printf("%4d", tab[i][j]);
-        printf("\n");
+#include <stdlib.h>
+#include <time.h>
+int sumatab(int a, int tab[], int N)
+{
+    int i, suma=0;
+    for(i=0; i<N; i++)
+    {
+        if(tab[i]%2==a)
+            suma=suma+tab[i];
     }
+    return(suma);
 }
 
-void obliczSume(int tab[N][M], int n, int m) {
-    int suma = 0, sumaParz = 0;
-    for(int i = 0; i < n; i++)
-        for(int j = 0; j < m; j++) {
-            suma += tab[i][j];
-            if(tab[i][j] % 2 == 0)
-                sumaParz += tab[i][j];
-        }
-
-    printf("Suma wszystkich: %d\n", suma);
-    printf("Suma parzystych: %d\n", sumaParz);
+int ileparz(int tab[], int N)
+{
+    int i, j=0;
+    for(i=0; i<N; i++)
+    {
+        if(tab[i]%2==0 && tab[i]%3==0 && tab[i]<101)
+            j++;
+    }
+    return(j);
 }
 
-int main(void) {
-    int n, m;
-    int tab[N][M];
+void tablica(int tab[], int N)
+{
+    int i;
+    printf("\nTablica:\n\n");
+    for(i=0; i<N; i++)
+    {
+        tab[i]=1+rand()%151;
+        printf("%5.d", tab[i]);
+    }
+    printf("\n\n");
+}
 
-    printf("Podaj N i M: ");
-    scanf("%d %d", &n, &m);
-
-    wczytaj(tab, n, m);
-    wypisz(tab, n, m);
-    obliczSume(tab, n, m);
-
+int main()
+{
+    #define N 72
+    int tab[N];
+    srand((unsigned int)time(NULL));
+    tablica(tab, N);
+    printf("Suma liczb parzystych: %d.\n", sumatab(0, tab, N));
+    printf("Suma liczb nieparzystych: %d.\n", sumatab(1, tab, N));
+    printf("Liczb parzystych podzielnych przez 6 w zakresie <1,100>: %d.\n", ileparz(tab, N));
     return 0;
 }
-

@@ -1,14 +1,13 @@
-#include <stdio.h>  
+#include <stdio.h>
 
-int pitagoras(int a, int b, int c)
+
+double srednia(double a, double b, double c)
 {
-    return (a*a + b*b == c*c) ||
-           (a*a + c*c == b*b) ||
-           (b*b + c*c == a*a);
+    return (a + b + c) / 3;
 }
 
 int main(void)
 {
-    printf("%d\n", pitagoras(3, 4, 5));
+    printf("%lf\n", srednia(3, 6, 9));
     return 0;
 }

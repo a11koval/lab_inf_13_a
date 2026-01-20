@@ -1,12 +1,18 @@
 #include <stdio.h>
 
-
 int main(void) {
-    int N, i;
-    scanf("%d", &N);
+    float a, b;
+    char op;
+    scanf("%f %c %f", &a, &op, &b);
 
-    for (i = 10; i <= 99 && i <= N; i++)
-        printf("%d ", i);
+    if (op == '+') printf("%.2f\n", a + b);
+    else if (op == '-') printf("%.2f\n", a - b);
+    else if (op == '*') printf("%.2f\n", a * b);
+    else if (op == '/') {
+        if (b != 0) printf("%.2f\n", a / b);
+        else printf("Blad: dzielenie przez zero\n");
+    }
+    else printf("Niepoprawny operator\n");
 
     return 0;
 }

@@ -1,26 +1,24 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+
 
 int main(void)
 {
-    int t[20], i, j, tmp;
+    int a, b, c, d;
+    int min, max, suma;
 
-    srand((unsigned int)time(NULL));
+    scanf("%d %d %d %d", &a, &b, &c, &d);
 
-    for (i = 0; i < 20; i++)
-        t[i] = rand() % 501 - 250;
+    min = max = a;
+    if (b < min) min = b;
+    if (c < min) min = c;
+    if (d < min) min = d;
 
-    for (i = 0; i < 19; i++)
-        for (j = i + 1; j < 20; j++)
-            if (t[j] < t[i]) {
-                tmp = t[i];
-                t[i] = t[j];
-                t[j] = tmp;
-            }
+    if (b > max) max = b;
+    if (c > max) max = c;
+    if (d > max) max = d;
 
-    for (i = 0; i < 20; i++)
-        printf("%d ", t[i]);
+    suma = a + b + c + d - min - max;
+    printf("%lf\n", suma / 2.0);
 
     return 0;
 }

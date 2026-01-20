@@ -1,19 +1,14 @@
-#include <stdio.h>
-#include <math.h>
-
-
-void prostokat(double a, double b, double *d, double *p, double *o)
-{
-    *d = sqrt(a*a + b*b);
-    *p = a * b;
-    *o = 2 * (a + b);
-}
+#include <stdio.h>  
 
 int main(void)
 {
-    double d, p, o;
-    prostokat(3, 4, &d, &p, &o);
+    int N, i, suma = 0;
+    scanf("%d", &N);
 
-    printf("d=%lf p=%lf o=%lf\n", d, p, o);
+    for (i = 1; i <= N; i++)
+        if (i % 10 == 1 || i % 10 == 2 || i % 10 == 3)
+            suma += i;
+
+    printf("%d\n", suma);
     return 0;
 }

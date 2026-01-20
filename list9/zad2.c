@@ -1,34 +1,38 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
-#define N 100
-#define M 100
-
-void losuj(float tab[N][M], int n, int m) {
-    for(int i=0;i<n;i++)
-        for(int j=0;j<m;j++)
-            tab[i][j]=(float)(rand()%200-100)/10;
+void zamiana(int tab[], int N)
+{
+    int i;
+    printf("\nZamieniona tablica:\n");
+    for(i=0; i<N; i++)
+    {
+        if(tab[i]>0)
+            tab[i]=0;
+        else
+            tab[i]=abs(tab[i]);
+        printf("%5.d", tab[i]);
+    }
 }
 
-void srednia(float tab[N][M], int n, int m) {
-    float s=0;
-    int ile=0;
-    for(int i=0;i<n;i++)
-        for(int j=0;j<m;j++)
-            if(tab[i][j]>0) {
-                s+=tab[i][j];
-                ile++;
-            }
-    if(ile) printf("Srednia: %.2f\n",s/ile);
+void tablica(int tab[], int N)
+{
+    int i;
+    printf("\nTablica:\n\n");
+    for(i=0; i<N; i++)
+    {
+        tab[i]=rand()%151-75;
+        printf("%5.d", tab[i]);
+    }
+    printf("\n\n");
 }
 
-int main(void) {
-    int n,m;
-    float tab[N][M];
-    srand(time(NULL));
-    scanf("%d %d",&n,&m);
-    losuj(tab,n,m);
-    srednia(tab,n,m);
+int main()
+{
+    #define N 72
+    int tab[N];
+    srand((unsigned int)time(NULL));
+    tablica(tab, N);
+    zamiana(tab, N);
     return 0;
 }

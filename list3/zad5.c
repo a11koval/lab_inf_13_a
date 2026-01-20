@@ -1,21 +1,21 @@
 #include <stdio.h>
 
 int main(void) {
-    float ocena, suma = 0;
-    int licznik = 0;
+    int a, b, c, d, e;
+    scanf("%d %d %d %d %d", &a, &b, &c, &d, &e);
 
-    while (1) {
-        scanf("%f", &ocena);
-        if (ocena == 0)
-            break;
-        suma += ocena;
-        licznik++;
-    }
+    int max = a, min = a;
+    if (b > max) max = b;
+    if (b < min) min = b;
+    if (c > max) max = c;
+    if (c < min) min = c;
+    if (d > max) max = d;
+    if (d < min) min = d;
+    if (e > max) max = e;
+    if (e < min) min = e;
 
-    if (licznik > 0)
-        printf("Srednia = %.2f\n", suma / licznik);
-    else
-        printf("Brak ocen\n");
+    printf("Najwieksza liczba: %d\n", max);
+    printf("Najmniejsza liczba: %d\n", min);
 
     return 0;
 }

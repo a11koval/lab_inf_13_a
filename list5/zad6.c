@@ -1,13 +1,13 @@
 #include <stdio.h>
-
-
-double bmi(double masa, double wzrost)
-{
-    return masa / (wzrost * wzrost);
-}
-
 int main(void)
 {
-    printf("%lf\n", bmi(70, 1.75));
+    int N, i, suma = 0;
+    scanf("%d", &N);
+
+    for (i = 1; i <= N; i++)
+        if (i % 7 == 0)
+            suma += i;
+
+    printf("%d\n", suma);
     return 0;
 }

@@ -1,13 +1,19 @@
 #include <stdio.h>
 
 
+int suma_kwadratow(int K)
+{
+    int i, suma = 0;
+
+    for (i = -K; i <= K; i++)
+        if (i % 2 == 0)
+            suma += i * i;
+
+    return suma;
+}
+
 int main(void)
 {
-    int t[10] = {1,2,3,4,5,6,7,8,9,10};
-    int i;
-
-    for (i = 0; i < 8; i++)
-        printf("(%d,%d,%d)\n", t[i], t[i+1], t[i+2]);
-
+    printf("%d\n", suma_kwadratow(5));
     return 0;
 }

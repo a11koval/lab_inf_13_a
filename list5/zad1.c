@@ -1,15 +1,10 @@
 #include <stdio.h>
 
-
-int parzysta(int x)
-{
-    if (x % 2 == 0) return 1;
-    return 0;
-}
-
 int main(void)
 {
-    int a = 6;
-    printf("%d\n", parzysta(a));
+    int i;
+    for (i = 32; i <= 126; i++)
+        printf("%3d  %c\n", i, i);
+
     return 0;
 }

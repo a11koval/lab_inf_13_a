@@ -1,18 +1,25 @@
-#include <stdio.h>  
-
-
-int max_tab(int t[], int n)
+#include <stdio.h>
+    
+int przestepny(int r)
 {
-    int i, max = t[0];
-    for (i = 1; i < n; i++)
-        if (t[i] > max)
-            max = t[i];
-    return max;
+    return (r % 4 == 0 && r % 100 != 0) || (r % 400 == 0);
+}
+
+int dzien_roku(int d, int m, int r)
+{
+    int dni[] = {31,28,31,30,31,30,31,31,30,31,30,31};
+    int i, suma = d;
+
+    if (przestepny(r)) dni[1] = 29;
+
+    for (i = 0; i < m - 1; i++)
+        suma += dni[i];
+
+    return suma;
 }
 
 int main(void)
 {
-    int t[5] = {3, 8, 1, 6, 4};
-    printf("%d\n", max_tab(t, 5));
+    printf("%d\n", dzien_roku(31, 12, 2024));
     return 0;
 }

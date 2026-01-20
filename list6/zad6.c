@@ -1,23 +1,13 @@
 #include <stdio.h>
 
 
-int pierwsza(int n)
+double bmi(double masa, double wzrost)
 {
-    int i;
-    if (n < 2) return 0;
-    for (i = 2; i * i <= n; i++)
-        if (n % i == 0)
-            return 0;
-    return 1;
+    return masa / (wzrost * wzrost);
 }
 
 int main(void)
 {
-    int i, N = 100;
-
-    for (i = 3; i <= N - 2; i++)
-        if (pierwsza(i) && pierwsza(i + 2))
-            printf("(%d,%d)\n", i, i + 2);
-
+    printf("%lf\n", bmi(70, 1.75));
     return 0;
 }

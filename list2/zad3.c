@@ -1,9 +1,12 @@
 #include <stdio.h>
-#include <math.h>
 
-int main(void) {
+int main() {
+    int a;
     float x;
-    scanf("%f", &x);
-    printf("Bezwzgledna wartosc liczby: %.2f\n", fabs(x));
+    char s;
+    printf("podaj z klawiatury:");
+    scanf("%d %f %c", &a, &x, &s);
+    printf("odpowiedzi int: %d, float: %.2f, char: %c, char jako liczba: %d", a, x, s, s);
+
     return 0;
 }

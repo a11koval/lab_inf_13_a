@@ -1,16 +1,22 @@
 #include <stdio.h>
 
 int main(void) {
-    int n, i;
-    float ocena, suma = 0;
+    int m;
+    scanf("%d", &m);
 
-    scanf("%d", &n);
+    if (m == 1) printf("Styczen\n");
+    else if (m == 2) printf("Luty\n");
+    else if (m == 3) printf("Marzec\n");
+    else if (m == 4) printf("Kwiecien\n");
+    else if (m == 5) printf("Maj\n");
+    else if (m == 6) printf("Czerwiec\n");
+    else if (m == 7) printf("Lipiec\n");
+    else if (m == 8) printf("Sierpien\n");
+    else if (m == 9) printf("Wrzesien\n");
+    else if (m == 10) printf("Pazdziernik\n");
+    else if (m == 11) printf("Listopad\n");
+    else if (m == 12) printf("Grudzien\n");
+    else printf("Niepoprawny numer miesiaca\n");
 
-    for (i = 0; i < n; i++) {
-        scanf("%f", &ocena);
-        suma += ocena;
-    }
-
-    printf("Srednia = %.2f\n", suma / n);
     return 0;
 }

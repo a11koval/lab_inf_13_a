@@ -1,31 +1,17 @@
 #include <stdio.h>
-
-int przestepny(int r)
+    
+int pierwsza(int n)
 {
-    return (r % 4 == 0 && r % 100 != 0) || (r % 400 == 0);
-}
-
-int dni_w_roku(int r)
-{
-    return przestepny(r) ? 366 : 365;
-}
-
-int dzien_roku(int d, int m, int r)
-{
-    int dni[] = {31,28,31,30,31,30,31,31,30,31,30,31};
-    int i, suma = d;
-
-    if (przestepny(r)) dni[1] = 29;
-
-    for (i = 0; i < m - 1; i++)
-        suma += dni[i];
-
-    return suma;
+    int i;
+    if (n < 2) return 0;
+    for (i = 2; i * i <= n; i++)
+        if (n % i == 0)
+            return 0;
+    return 1;
 }
 
 int main(void)
 {
-    int d = dzien_roku(1, 10, 2024);
-    printf("%d\n", dni_w_roku(2024) - d);
+    printf("%d\n", pierwsza(7));
     return 0;
 }

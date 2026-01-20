@@ -1,25 +1,34 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+
+
+int przestepny(int r)
+{
+    return (r % 4 == 0 && r % 100 != 0) || (r % 400 == 0);
+}
+
+int dni_w_roku(int r)
+{
+    return przestepny(r) ? 366 : 365;
+}
+
+int dzien_roku(int d, int m, int r)
+{
+    int dni[] = {31,28,31,30,31,30,31,31,30,31,30,31};
+    int i, suma = d;
+
+    if (przestepny(r)) dni[1] = 29;
+
+    for (i = 0; i < m - 1; i++)
+        suma += dni[i];
+
+    return suma;
+}
 
 int main(void)
 {
-    int t[50], i;
-    int suma = 0, parz = 0, ile20 = 0;
+    int d1 = dzien_roku(1, 1, 2024);
+    int d2 = dzien_roku(31, 12, 2024);
 
-    srand((unsigned int)time(NULL));
-
-    for (i = 0; i < 50; i++) {
-        t[i] = rand() % 36;
-        suma += t[i];
-        if (t[i] > 20) ile20++;
-        if (t[i] % 2 == 0) parz += t[i];
-    }
-
-    printf("ile >20: %d\n", ile20);
-    printf("suma: %d\n", suma);
-    printf("srednia: %lf\n", suma / 50.0);
-    printf("srednia parzystych: %lf\n", parz / 25.0);
-
+    printf("%d\n", d2 - d1);
     return 0;
 }

@@ -1,14 +1,13 @@
-#include <stdio.h>  
+#include <stdio.h>
 
-int main(void)
-{
-    int N, i, suma = 0;
-    scanf("%d", &N);
 
-    for (i = 1; i <= N; i++)
-        if (i % 10 == 1 || i % 10 == 2 || i % 10 == 3)
-            suma += i;
+int main(void) {
+    int a, b, i;
+    scanf("%d %d", &a, &b);
 
-    printf("%d\n", suma);
+    for (i = a; i <= b; i++)
+        if (i % 2 != 0)
+            printf("%d ", i);
+
     return 0;
 }

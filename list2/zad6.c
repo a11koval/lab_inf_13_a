@@ -1,18 +1,9 @@
 #include <stdio.h>
 
 int main(void) {
-    float a, b;
-    char op;
-    scanf("%f %c %f", &a, &op, &b);
+    int a, b, c, d;
+    scanf("%d %d %d %d", &a, &b, &c, &d);
 
-    if (op == '+') printf("%.2f\n", a + b);
-    else if (op == '-') printf("%.2f\n", a - b);
-    else if (op == '*') printf("%.2f\n", a * b);
-    else if (op == '/') {
-        if (b != 0) printf("%.2f\n", a / b);
-        else printf("Blad: dzielenie przez zero\n");
-    }
-    else printf("Niepoprawny operator\n");
-
+    printf("Srednia = %.2f\n", (a + b + c + d) / 4.0);
     return 0;
 }

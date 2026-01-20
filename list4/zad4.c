@@ -1,24 +1,16 @@
 #include <stdio.h>
 
-int main(void)
-{
-    double a, b;
-    char op;
+int main(void) {
+    int n, i;
+    float ocena, suma = 0;
 
-    scanf("%lf %c %lf", &a, &op, &b);
+    scanf("%d", &n);
 
-    switch (op) {
-        case '+': printf("%lf\n", a + b); break;
-        case '-': printf("%lf\n", a - b); break;
-        case '*': printf("%lf\n", a * b); break;
-        case '/':
-            if (b != 0)
-                printf("%lf\n", a / b);
-            else
-                printf("Dzielenie przez zero\n");
-            break;
-        default:
-            printf("Bledny operator\n");
+    for (i = 0; i < n; i++) {
+        scanf("%f", &ocena);
+        suma += ocena;
     }
+
+    printf("Srednia = %.2f\n", suma / n);
     return 0;
 }

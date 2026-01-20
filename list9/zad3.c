@@ -1,32 +1,41 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
-#define N 100
-#define M 100
-
-void losuj(float tab[N][M], int n, int m) {
-    for(int i=0;i<n;i++)
-        for(int j=0;j<m;j++)
-            tab[i][j]=(float)(rand()%200-100)/10;
-}
-
-void minmax(float tab[N][M], int n, int m) {
-    float min=tab[0][0], max=tab[0][0];
-    for(int i=0;i<n;i++)
-        for(int j=0;j<m;j++) {
-            if(tab[i][j]<min) min=tab[i][j];
-            if(tab[i][j]>max) max=tab[i][j];
+void pierwsze(int tab[], int N)
+{
+    int i, j, k=0, suma=0;
+    for(i=0; i<N; i++)
+    {
+        for(j=2; j<tab[i]; j++)
+        {
+            if(tab[i]%j==0)
+                k=1;
         }
-    printf("Min: %.1f\nMax: %.1f\n",min,max);
+        if(k==0)
+            suma=suma+tab[i];
+        k=0;
+    }
+    printf("Suma liczb pierwszych: %d.\n", suma);
 }
 
-int main(void) {
-    int n,m;
-    float tab[N][M];
-    srand(time(NULL));
-    scanf("%d %d",&n,&m);
-    losuj(tab,n,m);
-    minmax(tab,n,m);
+void tablica(int tab[], int N)
+{
+    int i;
+    printf("\nTablica:\n\n");
+    for(i=0; i<N; i++)
+    {
+        tab[i]=rand()%100+1;
+        printf("%5.d", tab[i]);
+    }
+    printf("\n\n");
+}
+
+int main()
+{
+    #define N 72
+    int tab[N];
+    srand((unsigned int)time(NULL));
+    tablica(tab, N);
+    pierwsze(tab, N);
     return 0;
 }

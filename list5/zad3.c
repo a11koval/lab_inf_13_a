@@ -1,16 +1,18 @@
 #include <stdio.h>
 
-
-int max3(int a, int b, int c)
-{
-    int max = a;
-    if (b > max) max = b;
-    if (c > max) max = c;
-    return max;
-}
-
 int main(void)
 {
-    printf("%d\n", max3(4, 9, 2));
+    int x, min, max;
+    scanf("%d", &x);
+
+    min = max = x;
+
+    while (x != 0) {
+        if (x < min) min = x;
+        if (x > max) max = x;
+        scanf("%d", &x);
+    }
+
+    printf("min = %d\nmax = %d\n", min, max);
     return 0;
 }

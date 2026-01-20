@@ -1,34 +1,37 @@
 #include <stdio.h>
-#include <string.h>
-#include <ctype.h>
-
-void zawiera(char s1[], char s2[]) {
-    if(strstr(s2,s1)) printf("TAK\n");
-    else printf("NIE\n");
-}
-
-void porownaj(char s1[], char s2[]) {
-    for(int i=0;s1[i];i++) s1[i]=toupper(s1[i]);
-    for(int i=0;s2[i];i++) s2[i]=toupper(s2[i]);
-    if(strcmp(s1,s2)==0) printf("ROWNE\n");
-}
-
-void odwroc(char s[]) {
-    int n=strlen(s)-1;
-    for(int i=0;i<n/2;i++) {
-        char t=s[i];
-        s[i]=s[n-1-i];
-        s[n-1-i]=t;
+#include <stdlib.h>
+#include <time.h>
+void trojka(int tab[], int N)
+{
+    int i, m, suma=0;
+    printf("\nPodaj liczbe calkowita: ");
+    scanf("%d", &m);
+    printf("\nTrojki w tablicy:\n\n");
+    for(i=0; i<N-3; i++)
+    {
+        if(tab[i]==m-2 && tab[i+1]==m && tab[i+2]==m+2)
+            printf("%d[%d] %d[%d] %d[%d]\n", tab[i], i, tab[i+1], i+1, tab[i+2], i+2);
     }
-    printf("%s\n",s);
 }
 
-int main(void) {
-    char s1[100], s2[100];
-    fgets(s1,100,stdin);
-    fgets(s2,100,stdin);
-    zawiera(s1,s2);
-    porownaj(s1,s2);
-    odwroc(s1);
+void tablica(int tab[], int N)
+{
+    int i;
+    printf("\nTablica:\n\n");
+    for(i=0; i<N; i++)
+    {
+        tab[i]=rand()%5+1;
+        printf("%5.d", tab[i]);
+    }
+    printf("\n\n");
+}
+
+int main()
+{
+    #define N 72
+    int tab[N];
+    srand((unsigned int)time(NULL));
+    tablica(tab, N);
+    trojka(tab, N);
     return 0;
 }
